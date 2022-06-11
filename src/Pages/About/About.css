@@ -1,0 +1,13 @@
+.AboutPage__content {
+  padding: 20px 80px;
+}
+
+.AboutPage__content h2{
+  margin: 20px 0;
+}
+
+.AboutPage__content p {
+  font-weight: 300;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}

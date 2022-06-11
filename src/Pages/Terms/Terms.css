@@ -1,0 +1,11 @@
+.Terms__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 40px 80px;
+}
+
+.Terms__content p{
+  font-size: .9rem;
+  font-weight: 300;
+}

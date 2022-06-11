@@ -1,0 +1,13 @@
+.Affiliate__content {
+  padding: 20px 80px;
+}
+
+.Affiliate__content > * {
+  margin-bottom: 20px;
+}
+
+.Affiliate__quote {
+  padding: 20px;
+  border-left: 2px solid #fbbd18;
+  background-color: #f5f5f5;
+}
