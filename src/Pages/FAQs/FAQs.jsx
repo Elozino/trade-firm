@@ -8,6 +8,7 @@ import "./FAQs.css"
 
 const FAQs = () => {
   const [open, setOpen] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(0)
 
 
   return (
@@ -27,17 +28,15 @@ const FAQs = () => {
           <div key={index} className='Faqs__content__item'>
             <div className='faqs__content__item__title'>
               <h3>{faq.faqs}</h3>
-              <div onClick={(e) => {
-                // if (index) {
-                //   setOpen(prev => !prev)
-                // } else {
-                //   setOpen(false)
-                // }
-              }}>
+              <div
+                onClick={() => {
+                  setActiveIndex(index)
+                  setOpen(prev => !prev)
+                }}>
                 <span>&#8630;</span>
               </div>
             </div>
-            <div style={{ display: open ? "block" : "none" }}
+            <div style={{ display: activeIndex == index && open? "block" : "none" }}
               className='faqs__content__item__answer'>
               <p>{faq.answer}</p>
             </div>

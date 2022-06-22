@@ -32,3 +32,20 @@
   height: 300px;
   /* border-radius: 50%; */
 }
+
+
+@media screen and (max-width: 720px) {
+  .homePage {
+    padding: 2rem 30px;
+    flex-direction: column;
+  }
+
+  .homePage__textContent {
+    width: 100%;
+  }
+
+  .homePage__img img {
+    width: 200px;
+    height: 200px;
+  }
+}

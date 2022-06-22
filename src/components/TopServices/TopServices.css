@@ -34,7 +34,7 @@
   width: 50px;
 }
 
-.TopServices__service{
+.TopServices__service {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +42,7 @@
   gap: 1.5rem;
 }
 
-.TopServices__service > div{
+.TopServices__service > div {
   display: flex;
   gap: 1rem;
   border: 1px solid #bbbbbb;
@@ -50,23 +50,35 @@
   padding: 30px;
 }
 
-.TopServices__service > div:hover{
+.TopServices__service > div:hover {
   border: 1px solid #fbbd18;
   cursor: pointer;
 }
 
-.TopServices__service img{
+.TopServices__service img {
   width: 70px;
   height: 70px;
 }
 
-.TopServices__service h4{
+.TopServices__service h4 {
   font-size: 1.5rem;
   font-weight: 500;
 }
 
-.TopServices__service p{
-  font-size: .8rem;
+.TopServices__service p {
+  font-size: 0.8rem;
   font-weight: 300;
-  color: #bbbbbb;;
+  color: #bbbbbb;
+}
+
+@media screen and (max-width: 720px) {
+  .TopServices {
+    padding: 30px;
+  }
+
+
+  .TopServices__service {
+    flex-direction: column;
+    margin-top: 20px;
+  }
 }

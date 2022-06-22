@@ -125,7 +125,7 @@ const Footer = () => {
               <a href="http://" target="_blank" rel="noopener noreferrer">FAQs</a>
             </li>
             <li>
-              <a href="http://" target="_blank" rel="noopener noreferrer">Terms</a>
+              <a href="http://" target="_blank" rel="noopener noreferrer">Terms {" "}</a>
             </li>
           </ul>
         </div>

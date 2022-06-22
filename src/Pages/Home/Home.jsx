@@ -15,7 +15,7 @@ import "./Home.css"
 const Home = () => {
   return (
     <div className='Home'>
-      <NavBar />
+      {/* <NavBar /> */}
       <HomePage />
       <div style={{ background: "#FBBD18", height: "40px", borderBottom: "5px solid #000" }}></div>
       <About />

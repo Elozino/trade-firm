@@ -104,3 +104,17 @@
 .TermPlans__plans .content button:hover {
  background-color: grey;
 }
+
+@media screen and (max-width: 720px) {
+  .TermPlans {
+    padding: 30px;
+  }
+
+  .TermPlans__plans {
+    flex-direction: column;
+  }
+
+  .TermPlans__plans .container {
+    width: 100%;
+  }
+}

@@ -93,13 +93,33 @@
   margin-left: -1em;
 }
 
-.Footer__footer li a{
+.Footer__footer li a {
   /* list-style: none; */
   /* margin-left: 20px; */
   text-decoration: none;
   color: #fff;
 }
 
-.Footer__footer li a:hover{
+.Footer__footer li a:hover {
   color: #fbbd18;
+}
+
+@media screen and (max-width: 720px) {
+  .Footer {
+    padding: 30px;
+  }
+
+  .Footer__links {
+    flex-direction: column;
+  }
+
+  .Footer__footer {
+    padding: 10px 30px;
+  }
+
+  .Footer__footer {
+    flex-direction: column;
+    padding: 10px 30px;
+    gap: .5rem;
+  }
 }
