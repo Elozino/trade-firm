@@ -8,6 +8,8 @@ import Terms from './Pages/Terms/Terms'
 import Dashboard from './Pages/Dashboard/Dashboard'
 import SignIn from './Pages/Auth/SignIn'
 import SignUp from './Pages/Auth/SignUp'
+import Transaction from './Pages/Transaction/Transaction'
+import Investment from './Pages/Investment/Investment'
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/transaction" element={<Transaction />} />
+        <Route path="/investment" element={<Investment />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>

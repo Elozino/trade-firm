@@ -13,6 +13,21 @@
   justify-content: space-between;
 }
 
+.Dashboard header h5 {
+  color: #aabac3;
+  font-weight: 400;
+}
+
+.Dashboard header h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.Dashboard header small {
+  color: #516978;
+  /* font-weight: 400; */
+}
+
 .Dashboard__headerBtn {
   display: flex;
 }

@@ -24,6 +24,7 @@
 }
 
 .homePage__textContent button {
+  margin: 0;
   margin-top: 2rem;
 }
 

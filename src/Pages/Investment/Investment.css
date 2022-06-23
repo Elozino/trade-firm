@@ -1,0 +1,39 @@
+.Investment {
+  padding: 2rem;
+}
+
+.Investment header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Investment header h5 {
+  color: #aabac3;
+  font-weight: 400;
+}
+
+.Investment header h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+  font-weight: 400;
+}
+
+.Investment header small {
+  color: #516978;
+  /* font-weight: 400; */
+}
+
+.Investment__headerBtn {
+  display: flex;
+}
+
+.Investment__headerBtn .invest {
+  background-color: #364a63;
+  margin-left: 10px;
+}
+
+.Investment__headerBtn .deposit {
+  background-color: #fff;
+  color: #000;
+}

@@ -5,7 +5,7 @@ import { IoMdAlert } from 'react-icons/io'
 
 const FundsCard = ({ title, duration, bg }) => {
   return (
-    <div className='FundsCard' style={{ borderBottom: `2px solid ${bg}` }}>
+    <div className='FundsCard' style={{ borderBottom: `3px solid ${bg}` }}>
       <div>
         <header>
           <h4>{title}</h4>

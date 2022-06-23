@@ -11,7 +11,7 @@
   color: rgb(88, 124, 157);
 }
 
-.DashboarLayout__Main{
+.DashboarLayout__Main {
   overflow: auto;
   position: relative;
 }
@@ -53,7 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .6rem 2.5rem;
+  padding: 0.6rem 2.5rem;
   height: 40px;
   position: absolute;
   bottom: 0;
@@ -68,10 +68,11 @@
 }
 
 .DashboardLayout__footer ul a {
-  color: #000;
+  color: #8cabce;
   font-size: 0.7rem;
 }
 
-.DashboardLayout__footer-rights{
+.DashboardLayout__footer-rights {
   font-size: 0.7rem;
+  color: #037dff;
 }

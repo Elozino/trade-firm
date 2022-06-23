@@ -12,10 +12,9 @@
   margin-bottom: 2rem;
 }
 
-.Auth__Wrapper a{
+.Auth__Wrapper a {
   color: rgba(0, 0, 255, 0.803) !important;
 }
-
 
 .Auth__Wrapper {
   background-color: #fff;
@@ -91,6 +90,9 @@ input:-webkit-autofill:active {
   border-radius: 0.2rem;
   color: #cecece;
   letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Auth__create p {

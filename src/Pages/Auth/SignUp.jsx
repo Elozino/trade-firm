@@ -1,14 +1,21 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
+  let navigate = useNavigate();
+
+  const handleSignup = (e) => {
+    e.preventDefault()
+    navigate("/dashboard")
+  }
+
   return (
     <div className='Auth'>
       <div className='Logo'>BANIWAZ</div>
       <div className='Auth__Wrapper'>
         <h3>Create an Account</h3>
         <p>Sign up with your email and get started with your free account.</p>
-        <form action="" className='Auth__form'>
+        <form onSubmit={handleSignup} className='Auth__form'>
           <div>
             <label htmlFor="fullname">Full Name</label>
             <div className='Auth__Input'>

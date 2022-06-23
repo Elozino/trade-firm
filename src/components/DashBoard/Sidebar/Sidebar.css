@@ -29,6 +29,8 @@
 .Sidebar__content .Sidebar__usd {
   font-size: 1.3rem;
   color: #066de2;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .Sidebar__content .Sidebar__usd span {
@@ -57,6 +59,8 @@
 .Sidebar__btn button {
   padding: 0.4rem 0.8rem;
   cursor: pointer;
+  letter-spacing: 1.5px;
+  font-weight: normal;
 }
 
 .Sidebar__btn .deposit {

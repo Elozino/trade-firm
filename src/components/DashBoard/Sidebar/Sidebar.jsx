@@ -4,6 +4,7 @@ import "./Sidebar.css"
 import { RiDashboardLine, RiUserSettingsLine } from "react-icons/ri"
 import { MdOutlineSwapHorizontalCircle } from "react-icons/md"
 import { AiOutlineTransaction } from "react-icons/ai"
+import { sidebar } from '../../../Data/sidebar'
 
 const Sidebar = () => {
   return (
@@ -28,13 +29,16 @@ const Sidebar = () => {
         <section className='Sidebar__menu'>
           <h5>MENU</h5>
           <div className='Sidebar__menuLink'>
-            <div className='Sidebar__link'>
-              <Link to="">
-                <RiDashboardLine />
-                <span>Dashboard</span>
-              </Link>
-            </div>
-            <div className='Sidebar__link'>
+            {sidebar.map((item, i) => (
+              <div className='Sidebar__link' key={i}>
+                <Link to={item.url}>
+                  <RiDashboardLine />
+                  {/* {item.icon} */}
+                  <span>{item.linkName}</span>
+                </Link>
+              </div>
+            ))}
+            {/* <div className='Sidebar__link'>
               <Link to="">
                 <MdOutlineSwapHorizontalCircle />
                 <span>Transaction</span>
@@ -57,7 +61,7 @@ const Sidebar = () => {
                 <RiUserSettingsLine />
                 <span>My Profile</span>
               </Link>
-            </div>
+            </div> */}
           </div>
         </section>
         <section className='Sidebar__add'>

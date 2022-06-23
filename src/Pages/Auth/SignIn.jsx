@@ -1,15 +1,22 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import './Auth.css'
 
 const SignIn = () => {
+  let navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    navigate("/dashboard")
+  }
+  
   return (
     <div className='Auth'>
       <div className='Auth__Logo'>BANIWAZ</div>
       <div className='Auth__Wrapper'>
         <h3>Login into Account</h3>
         <p>Sign in into your account using email and passcode</p>
-        <form action="" className='Auth__form'>
+        <form onSubmit={handleLogin} className='Auth__form'>
           <div>
             <label htmlFor="email">Email</label>
             <div className='Auth__Input'>
