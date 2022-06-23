@@ -3,6 +3,7 @@ import Sidebar from '../Sidebar/Sidebar'
 import "./DashboardLayout.css"
 import { BsFillPersonFill } from 'react-icons/bs'
 import { IoIosArrowDown } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 
 const DashboardLayout = ({ children }) => {
   return (
@@ -21,6 +22,24 @@ const DashboardLayout = ({ children }) => {
           </div>
         </div>
         {children}
+        <div className='DashboardLayout__footer'>
+          <div className='DashboardLayout__footer-link'>
+            <ul>
+              <li>
+                <Link to="">FAQs</Link>
+              </li>
+              <li>
+                <Link to="">Terms and Condition</Link>
+              </li>
+              <li>
+                <Link to="">Privacy Policy</Link>
+              </li>
+            </ul>
+          </div>
+          <div className='DashboardLayout__footer-rights'>
+            <p>Secure Trade Firm © 2022. All Rights Reserved.</p>
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -5,6 +5,8 @@ import "./Dashboard.css"
 import { TiWarning } from "react-icons/ti"
 import { IoIosAlert } from 'react-icons/io'
 import { BsArrowRight } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
+import FundsCard from '../../components/DashBoard/FundsCard/FundsCard'
 
 const Dashboard = () => {
   return (
@@ -39,6 +41,23 @@ const Dashboard = () => {
             color="#037DFF"
             title="Update your account information from your profile to complete account setup."
             BtnTitle="Update Profile"
+          />
+        </section>
+        <section className='Dashboard__fundscard'>
+          <FundsCard
+            title="Available Balance"
+            duration="INVESTMENT ACCOUNT"
+            bg="#037DFF"
+          />
+          <FundsCard
+            title="Total Deposit"
+            duration="THIS MONTH"
+            bg="#364A63"
+          />
+          <FundsCard
+            title="Total Withdrawal"
+            duration="THIS MONTH"
+            bg="#F4BD0E"
           />
         </section>
       </div>

@@ -1,12 +1,19 @@
 .DashboarLayout {
   display: grid;
-  grid-template-columns: 250px 4fr;
+  grid-template-columns: 17rem 4fr;
   height: 100vh;
+  overflow: hidden;
+  background-color: #f5f6fa;
 }
 
 .DashboarLayout__Siderbar {
   background-color: rgb(16, 25, 36);
   color: rgb(88, 124, 157);
+}
+
+.DashboarLayout__Main{
+  overflow: auto;
+  position: relative;
 }
 
 .DashboarLayout__nav {
@@ -15,6 +22,7 @@
   justify-content: flex-end;
   padding: 0.7rem 2.5rem;
   gap: 0.5rem;
+  background-color: #fff;
 }
 
 .DashboardLayout__image {
@@ -38,4 +46,32 @@
 
 .DashboardLayout__person .verified {
   color: green;
+}
+
+.DashboardLayout__footer {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .6rem 2.5rem;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.DashboardLayout__footer ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.DashboardLayout__footer ul a {
+  color: #000;
+  font-size: 0.7rem;
+}
+
+.DashboardLayout__footer-rights{
+  font-size: 0.7rem;
 }
