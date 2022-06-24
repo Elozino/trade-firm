@@ -55,7 +55,7 @@
   justify-content: space-between;
   padding: 0.6rem 2.5rem;
   height: 40px;
-  position: absolute;
+  position: sticky;
   bottom: 0;
   width: 100%;
 }
@@ -75,4 +75,19 @@
 .DashboardLayout__footer-rights {
   font-size: 0.7rem;
   color: #037dff;
+}
+
+@media screen and (max-width: 720px) {
+  .DashboardLayout__footer {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 2.5rem;
+    height: 60px;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+  }
 }

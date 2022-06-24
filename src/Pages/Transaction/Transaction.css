@@ -37,9 +37,12 @@
 
 .Transaction__transTitle {
   font-size: 0.8rem;
-  padding: 0.8rem;
-  border-bottom: 3px solid #037dff;
+  padding: 0.65rem;
   cursor: pointer;
+}
+
+.active {
+  border-bottom: 3px solid #037dff;
 }
 
 .Transaction__History{

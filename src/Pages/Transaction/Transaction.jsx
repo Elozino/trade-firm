@@ -21,9 +21,9 @@ const Transaction = () => {
         </header>
         <section className='Transaction__transContent'>
           <div className='Transaction__transHeader'>
-            <p className='Transaction__transTitle'>History</p>
-            <p className='Transaction__transTitle1'>Deposit</p>
-            <p className='Transaction__transTitle2'>Withdraw</p>
+            <p className='Transaction__transTitle active'>History</p>
+            <p className='Transaction__transTitle'>Deposit</p>
+            <p className='Transaction__transTitle'>Withdraw</p>
           </div>
           <div className='Transaction__history'>
             <div className='Transaction__historyContent'>

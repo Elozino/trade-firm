@@ -10,6 +10,8 @@ import SignIn from './Pages/Auth/SignIn'
 import SignUp from './Pages/Auth/SignUp'
 import Transaction from './Pages/Transaction/Transaction'
 import Investment from './Pages/Investment/Investment'
+import OurPlans from './Pages/Plans/OurPlans'
+import Profile from './Pages/Profile/Profile'
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/transaction" element={<Transaction />} />
         <Route path="/investment" element={<Investment />} />
+        <Route path="/ourplans" element={<OurPlans />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
