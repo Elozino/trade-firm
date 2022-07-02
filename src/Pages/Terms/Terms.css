@@ -5,7 +5,19 @@
   padding: 40px 80px;
 }
 
-.Terms__content p{
-  font-size: .9rem;
+.Terms__content p {
+  font-size: 0.9rem;
   font-weight: 300;
+}
+
+@media screen and (max-width: 720px) {
+  .Terms__content {
+    padding: 20px 20px;
+  }
+  .Terms__content p {
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
 }

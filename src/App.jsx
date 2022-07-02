@@ -12,6 +12,7 @@ import Transaction from './Pages/Transaction/Transaction'
 import Investment from './Pages/Investment/Investment'
 import OurPlans from './Pages/Plans/OurPlans'
 import Profile from './Pages/Profile/Profile'
+import DashboardLayout from './components/DashBoard/DashboardLayout/DashboardLayout'
 
 function App() {
 
@@ -23,11 +24,12 @@ function App() {
         <Route path="/affiliate" element={<Affiliate />} />
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/*" element={<DashboardLayout />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/transaction" element={<Transaction />} />
         <Route path="/investment" element={<Investment />} />
         <Route path="/ourplans" element={<OurPlans />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile />} /> */}
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>

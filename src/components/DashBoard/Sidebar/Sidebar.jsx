@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Sidebar.css"
 import { RiDashboardLine, RiUserSettingsLine } from "react-icons/ri"
@@ -7,6 +7,9 @@ import { AiOutlineTransaction } from "react-icons/ai"
 import { sidebar } from '../../../Data/sidebar'
 
 const Sidebar = () => {
+  const [activeIndex, setActiveIndex] = useState(0)
+  // console.log(activeIndex);
+
   return (
     <div className='Sidebar'>
       <div className='Sidebar__header'>
@@ -30,10 +33,20 @@ const Sidebar = () => {
           <h5>MENU</h5>
           <div className='Sidebar__menuLink'>
             {sidebar.map((item, i) => (
-              <div className='Sidebar__link' key={i}>
+              <div
+                key={i + item.linkName.slice(0, 3)}
+                onClick={() => {
+                  setActiveIndex(i)
+                  console.log({ i })
+                  console.log({ activeIndex })
+                }}
+                className='Sidebar__link'
+                style={{ backgroundColor: activeIndex === i && "#192839" }}
+              >
                 <Link to={item.url}>
-                  <RiDashboardLine />
-                  {/* {item.icon} */}
+                  <span>
+                    <RiDashboardLine />
+                  </span>
                   <span>{item.linkName}</span>
                 </Link>
               </div>

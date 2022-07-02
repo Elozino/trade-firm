@@ -1,13 +1,49 @@
-import React from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import { auth, db } from '../../firebase/firebaseConfig';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { addDoc, collection } from 'firebase/firestore';
 
 const SignUp = () => {
   let navigate = useNavigate();
+  const [user, loading, error] = useAuthState(auth);
+  const [formData, setFormData] = useState({
+    fullname: "",
+    email: "",
+    password: ""
+  })
 
-  const handleSignup = (e) => {
-    e.preventDefault()
-    navigate("/dashboard")
+  const changeHandle = e => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
   }
+
+  useEffect(() => {
+    if (loading) return;
+    if (user) navigate("/dashboard");
+  }, [user, loading]);
+
+  const handleSignup = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await createUserWithEmailAndPassword(auth, formData.email, formData.password)
+      const user = res.user;
+      console.log(user);
+      await addDoc(collection(db, "users"), {
+        uid: user.uid,
+        ...formData,
+        authProvider: "local",
+      });
+    } catch (err) {
+      console.error(err);
+      alert(err.message);
+    }
+  }
+
+
 
   return (
     <div className='Auth'>
@@ -15,7 +51,7 @@ const SignUp = () => {
       <div className='Auth__Wrapper'>
         <h3>Create an Account</h3>
         <p>Sign up with your email and get started with your free account.</p>
-        <form onSubmit={handleSignup} className='Auth__form'>
+        <form className='Auth__form'>
           <div>
             <label htmlFor="fullname">Full Name</label>
             <div className='Auth__Input'>
@@ -24,6 +60,8 @@ const SignUp = () => {
                 placeholder='Enter your Full Name'
                 id="fullname"
                 name='fullname'
+                value={formData.name}
+                onChange={changeHandle}
                 required
               />
             </div>
@@ -36,6 +74,8 @@ const SignUp = () => {
                 placeholder='Enter your email address'
                 id="email"
                 name='email'
+                value={formData.email}
+                onChange={changeHandle}
                 required
               />
             </div>
@@ -46,6 +86,10 @@ const SignUp = () => {
               <input
                 type="password"
                 placeholder='Enter your passcode'
+                id="password"
+                name='password'
+                value={formData.password}
+                onChange={changeHandle}
                 required
               />
             </div>
@@ -56,11 +100,13 @@ const SignUp = () => {
               <p>&nbsp; I have agree to the {" "} <Link to="">Terms & Condition</Link> </p>
             </div>
           </div>
-          <button className='Auth__btn'>Sign Up</button>
+          <button
+            onClick={handleSignup}
+            className='Auth__btn'>Sign Up</button>
           <div className='Auth__create'>
             <p>
               Already have an account?
-              <Link to=""> Sign in instead</Link>
+              <Link to="/signin"> Sign in instead</Link>
             </p>
           </div>
         </form>

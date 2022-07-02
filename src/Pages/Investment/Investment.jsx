@@ -1,14 +1,12 @@
 import React from 'react'
 import "./Investment.css"
 import { BsArrowRight } from 'react-icons/bs'
-import DashboardLayout from '../../components/DashBoard/DashboardLayout/DashboardLayout'
 import { IoIosAlert } from 'react-icons/io'
 import { MdOutlineHistoryEdu } from 'react-icons/md'
 import { GiNotebook } from "react-icons/gi"
 
 const Investment = () => {
   return (
-    <DashboardLayout>
       <div className="Investment">
         <header>
           <div>
@@ -72,7 +70,6 @@ const Investment = () => {
           </div>
         </section>
       </div>
-    </DashboardLayout>
   )
 }
 

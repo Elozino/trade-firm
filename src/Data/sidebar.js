@@ -11,21 +11,21 @@ export const sidebar = [
   {
     icon: MdOutlineSwapHorizontalCircle,
     linkName: "Transaction",
-    url: "/transaction"
+    url: "/dashboard/transaction"
   },
   {
     icon: AiOutlineTransaction,
     linkName: "Investment",
-    url: "/investment"
+    url: "/dashboard/investment"
   },
   {
     icon: AiOutlineTransaction,
     linkName: "Our Plans",
-    url: "/ourplans"
+    url: "ourplans"
   },
   {
     icon: RiUserSettingsLine,
     linkName: "My Profile",
-    url: "/profile"
+    url: "/dashboard/profile"
   }
 ]

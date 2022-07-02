@@ -1,15 +1,51 @@
-import React from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { auth } from '../../firebase/firebaseConfig';
 import './Auth.css'
+
+
+
+
+// const sendPasswordReset = async (email) => {
+//   try {
+//     await sendPasswordResetEmail(auth, email);
+//     alert("Password reset link sent!");
+//   } catch (err) {
+//     console.error(err);
+//     alert(err.message);
+//   }
+// };
 
 const SignIn = () => {
   let navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    fullname: "",
+    email: "",
+    password: ""
+  })
 
-  const handleLogin = (e) => {
-    e.preventDefault()
-    navigate("/dashboard")
+  const changeHandle = e => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
   }
-  
+
+
+  const handleLogin = async (e) => {
+    e.preventDefault()
+    try {
+      await signInWithEmailAndPassword(auth, formData.email, formData.password)
+        .then(res => console.log(res.user))
+      navigate("/dashboard")
+    } catch (err) {
+      console.error(err);
+      alert(err.message);
+    }
+  }
+
+
   return (
     <div className='Auth'>
       <div className='Auth__Logo'>BANIWAZ</div>
@@ -24,6 +60,8 @@ const SignIn = () => {
                 placeholder='Enter your email address'
                 id="email"
                 name='email'
+                value={formData.email}
+                onChange={changeHandle}
                 required
               />
             </div>
@@ -34,6 +72,10 @@ const SignIn = () => {
               <input
                 type="password"
                 placeholder='Enter your passcode'
+                id="password"
+                name='password'
+                value={formData.password}
+                onChange={changeHandle}
                 required
               />
             </div>
@@ -47,11 +89,13 @@ const SignIn = () => {
               <Link to="">Forgot Code?</Link>
             </div>
           </div>
-          <button className='Auth__btn'>Login</button>
+          <button
+            onClick={handleLogin}
+            className='Auth__btn'>Login</button>
           <div className='Auth__create'>
             <p>
               New on our platform?
-              <Link to="">&nbsp; Create an account</Link>
+              <Link to="/signup">&nbsp; Create an account</Link>
             </p>
           </div>
         </form>

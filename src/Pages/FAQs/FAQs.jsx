@@ -27,16 +27,18 @@ const FAQs = () => {
         {faqs.map((faq, index) => (
           <div key={index} className='Faqs__content__item'>
             <div className='faqs__content__item__title'>
-              <h3>{faq.faqs}</h3>
+              <div>
+                <p>{faq.faqs}</p>
+              </div>
               <div
                 onClick={() => {
                   setActiveIndex(index)
                   setOpen(prev => !prev)
                 }}>
-                <span>&#8630;</span>
+                @
               </div>
             </div>
-            <div style={{ display: activeIndex == index && open? "block" : "none" }}
+            <div style={{ display: activeIndex == index && open ? "block" : "none" }}
               className='faqs__content__item__answer'>
               <p>{faq.answer}</p>
             </div>
