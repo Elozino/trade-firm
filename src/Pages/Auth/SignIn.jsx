@@ -27,7 +27,7 @@ const SignIn = () => {
     try {
       await signInWithEmailAndPassword(auth, formData.email, formData.password)
         .then(res => console.log(res.user))
-      // navigate("/dashboard")
+      navigate("/dashboard")
     } catch (err) {
       console.error(err);
       alert(err.message);

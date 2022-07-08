@@ -3,7 +3,7 @@ import "./FundsCard.css"
 import { IoMdAlert } from 'react-icons/io'
 
 
-const FundsCard = ({ title, duration, bg }) => {
+const FundsCard = ({ title, duration, bg, usdAmount }) => {
   return (
     <div className='FundsCard' style={{ borderBottom: `3px solid ${bg}` }}>
       <div>
@@ -13,7 +13,7 @@ const FundsCard = ({ title, duration, bg }) => {
         </header>
         <div>
           <p>
-            0 <span>USD</span>
+            {usdAmount ?? 0} <span>USD</span>
           </p>
         </div>
       </div>

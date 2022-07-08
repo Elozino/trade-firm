@@ -11,7 +11,7 @@ import { StateContext } from '../../context/context'
 
 
 const Dashboard = () => {
-  const { userName } = useContext(StateContext)
+  const { userName, usd } = useContext(StateContext)
   console.log(userName)
   return (
     <div className='Dashboard'>
@@ -50,6 +50,7 @@ const Dashboard = () => {
         <FundsCard
           title="Available Balance"
           duration="INVESTMENT ACCOUNT"
+          usdAmount={usd}
           bg="#037DFF"
         />
         <FundsCard
