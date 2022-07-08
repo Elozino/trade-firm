@@ -21,7 +21,7 @@ const DashboardLayout = () => {
   // const currentUserId = auth.currentUser?.uid;
 
   const getUser = async () => {
-    const currentUserId = auth.currentUser.uid;
+    const currentUserId = auth?.currentUser?.uid;
     console.log(currentUserId);
     const q = query(
       collection(db, "users"),

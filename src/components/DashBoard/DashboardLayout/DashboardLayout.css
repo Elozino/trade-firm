@@ -78,6 +78,32 @@
 }
 
 @media screen and (max-width: 720px) {
+  .DashboarLayout {
+    display: grid;
+    grid-template-columns: 0rem 4fr;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f5f6fa;
+    animation-name: sidemenu;
+    animation-duration: 2s;
+  }
+
+  .DashboarLayout__Siderbar {
+    position: relative;
+    left: -100%;
+    animation-name: sidemenu;
+    animation-duration: 2s;
+  }
+  @keyframes sidemenu {
+    0% {
+      left: 0;
+      grid-template-columns: 17rem 4fr;
+    }
+    100% {
+      left: -100%;
+      grid-template-columns: 0rem 4fr;
+    }
+  }
   .DashboardLayout__footer {
     background-color: #fff;
     display: flex;

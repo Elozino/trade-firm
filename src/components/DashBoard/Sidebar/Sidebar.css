@@ -109,3 +109,24 @@
   font-size: 0.75rem;
   margin-top: 10px;
 }
+
+@media screen and (max-width: 720px) {
+  .Sidebar {
+    position: relative;
+    opacity: 0;
+    animation-name: sideview;
+    animation-duration: 2s;
+  }
+  @keyframes sideview {
+    0% {
+      left: 0;
+      display: block;
+      opacity: 1;
+    }
+    100% {
+      left: -100%;
+      display: none;
+      opacity: 0;
+    }
+  }
+}
