@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import AccountCard from '../../components/DashBoard/AccountCard/AccountCard'
 import "./Dashboard.css"
 import { TiWarning } from "react-icons/ti"
@@ -6,26 +6,13 @@ import { IoIosAlert } from 'react-icons/io'
 import { BsArrowRight } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import FundsCard from '../../components/DashBoard/FundsCard/FundsCard'
-import { collection, getDocs } from 'firebase/firestore'
-import { auth, db } from '../../firebase/firebaseConfig'
+import { StateContext } from '../../context/context'
+
+
 
 const Dashboard = () => {
-  const [userName, setuserName] = useState("")
-  const currentUserId = auth.currentUser.uid
-  // console.log(currentUserId);
-
-
-  useEffect(() => {
-    const getUser = async () => {
-      const userInfo = await getDocs(collection(db, "users"))
-      console.log(userInfo);
-      const user = userInfo.docs.map((doc) => (doc._document.data.value.mapValue.fields.fullname.stringValue))
-      console.log(user);
-      setuserName(user)
-    }
-    getUser()
-  }, [])
-
+  const { userName } = useContext(StateContext)
+  console.log(userName)
   return (
     <div className='Dashboard'>
       <header>

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Sidebar from '../Sidebar/Sidebar'
 import "./DashboardLayout.css"
 import { BsFillPersonFill } from 'react-icons/bs'
 import { IoIosArrowDown } from 'react-icons/io'
-import { Link, Route, Routes, useLocation, useNavigate, useRoutes } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Dashboard from '../../../Pages/Dashboard/Dashboard'
 import Transaction from '../../../Pages/Transaction/Transaction'
 import Investment from '../../../Pages/Investment/Investment'
@@ -11,11 +11,35 @@ import OurPlans from '../../../Pages/Plans/OurPlans'
 import Profile from '../../../Pages/Profile/Profile'
 import { auth, db } from '../../../firebase/firebaseConfig'
 import { signOut } from 'firebase/auth'
-import { collection, getDocs } from 'firebase/firestore'
+import { StateContext } from '../../../context/context'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 
 const DashboardLayout = () => {
   const { pathname } = useLocation()
   const navigate = useNavigate()
+  const { userName, setuserName, setEmail, setUsd, setBtc } = useContext(StateContext)
+  // const currentUserId = auth.currentUser?.uid;
+
+  const getUser = async () => {
+    const currentUserId = auth.currentUser.uid;
+    console.log(currentUserId);
+    const q = query(
+      collection(db, "users"),
+      where("uid", "==", currentUserId)
+    );
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc
+      setuserName(doc.data().fullname);
+      setEmail(doc.data().email);
+      setUsd(doc.data().usdAmount);
+      setBtc(doc.data().btcAmount);
+    });
+  };
+
+  useEffect(() => {
+    getUser()
+  }, [])
 
   const renderScreen = () => {
     if (pathname === "/dashboard") {
@@ -50,7 +74,7 @@ const DashboardLayout = () => {
             <p className='verified'>Verified</p>
             <p
               onClick={logout}
-              style={{ display: "flex", alignItems: "center" }}>Bani &nbsp;<IoIosArrowDown /></p>
+              style={{ display: "flex", alignItems: "center" }}>{userName} &nbsp;<IoIosArrowDown /></p>
           </div>
         </div>
         <>

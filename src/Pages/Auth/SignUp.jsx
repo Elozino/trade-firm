@@ -11,7 +11,8 @@ const SignUp = () => {
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
-    password: ""
+    password: "",
+    terms: false,
   })
 
   const changeHandle = e => {
@@ -21,10 +22,10 @@ const SignUp = () => {
     })
   }
 
-  useEffect(() => {
-    if (loading) return;
-    if (user) navigate("/dashboard");
-  }, [user, loading]);
+  // useEffect(() => {
+  //   if (loading) return;
+  //   if (user) navigate("/dashboard");
+  // }, [user, loading]);
 
   const handleSignup = async (e) => {
     e.preventDefault()
@@ -35,8 +36,11 @@ const SignUp = () => {
       await addDoc(collection(db, "users"), {
         uid: user.uid,
         ...formData,
+        usdAmount: 0.00,
+        btcAmount: 0.00,
         authProvider: "local",
       });
+      navigate("/dashboard")
     } catch (err) {
       console.error(err);
       alert(err.message);
@@ -96,7 +100,16 @@ const SignUp = () => {
           </div>
           <div className='Auth__checkbox-wrapper'>
             <div className='Auth__checkbox'>
-              <input type="checkbox" />
+              <input type="checkbox"
+                id="terms"
+                name="terms"
+                value={formData.terms}
+                onChange={(prev) => setFormData({
+                  ...formData,
+                  [prev.target.name]: prev.target.checked
+                })
+                }
+              />
               <p>&nbsp; I have agree to the {" "} <Link to="">Terms & Condition</Link> </p>
             </div>
           </div>

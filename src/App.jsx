@@ -13,6 +13,7 @@ import Investment from './Pages/Investment/Investment'
 import OurPlans from './Pages/Plans/OurPlans'
 import Profile from './Pages/Profile/Profile'
 import DashboardLayout from './components/DashBoard/DashboardLayout/DashboardLayout'
+import ForgotPassword from './Pages/Auth/ForgotPassword'
 
 function App() {
 
@@ -25,8 +26,8 @@ function App() {
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/dashboard/*" element={<DashboardLayout />} />
-        {/* <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/transaction" element={<Transaction />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        {/* <Route path="/transaction" element={<Transaction />} />
         <Route path="/investment" element={<Investment />} />
         <Route path="/ourplans" element={<OurPlans />} />
         <Route path="/profile" element={<Profile />} /> */}

@@ -6,23 +6,12 @@ import './Auth.css'
 
 
 
-
-// const sendPasswordReset = async (email) => {
-//   try {
-//     await sendPasswordResetEmail(auth, email);
-//     alert("Password reset link sent!");
-//   } catch (err) {
-//     console.error(err);
-//     alert(err.message);
-//   }
-// };
-
 const SignIn = () => {
   let navigate = useNavigate();
   const [formData, setFormData] = useState({
-    fullname: "",
     email: "",
-    password: ""
+    password: "",
+    remember: false
   })
 
   const changeHandle = e => {
@@ -38,13 +27,12 @@ const SignIn = () => {
     try {
       await signInWithEmailAndPassword(auth, formData.email, formData.password)
         .then(res => console.log(res.user))
-      navigate("/dashboard")
+      // navigate("/dashboard")
     } catch (err) {
       console.error(err);
       alert(err.message);
     }
   }
-
 
   return (
     <div className='Auth'>
@@ -86,7 +74,7 @@ const SignIn = () => {
               <p>&nbsp; Remember Me</p>
             </div>
             <div>
-              <Link to="">Forgot Code?</Link>
+              <Link to="/forgot-password">Forgot Passcode?</Link>
             </div>
           </div>
           <button

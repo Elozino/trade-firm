@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { IoIosAlert, IoIosArrowForward } from 'react-icons/io';
+import { StateContext } from '../../../context/context';
 import AccountCard from '../AccountCard/AccountCard';
 
 const ProfileDetails = () => {
+  const { userName, email } = useContext(StateContext)
   return <>
     <section>
       <AccountCard
@@ -20,21 +22,21 @@ const ProfileDetails = () => {
         <div className="Profile__row">
           <p>Full Name</p>
           <div>
-            <p>Perfect Bani</p>
+            <p>{userName}</p>
             <span><IoIosArrowForward /></span>
           </div>
         </div>
         <div className="Profile__row">
           <p>Display Name</p>
           <div>
-            <p>Perfect Bani</p>
+            <p>{userName}</p>
             <span><IoIosArrowForward /></span>
           </div>
         </div>
         <div className="Profile__row">
           <p>Email</p>
           <div>
-            <p>email@email.com</p>
+            <p>{email}</p>
             <span><IoIosArrowForward /></span>
           </div>
         </div>

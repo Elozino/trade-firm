@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Sidebar.css"
 import { RiDashboardLine, RiUserSettingsLine } from "react-icons/ri"
 import { MdOutlineSwapHorizontalCircle } from "react-icons/md"
 import { AiOutlineTransaction } from "react-icons/ai"
 import { sidebar } from '../../../Data/sidebar'
+import { StateContext } from '../../../context/context'
 
 const Sidebar = () => {
   const [activeIndex, setActiveIndex] = useState(0)
-  // console.log(activeIndex);
+  const { btc, usd } = useContext(StateContext)
+
+  // console.log(btc)
 
   return (
     <div className='Sidebar'>
@@ -18,11 +21,11 @@ const Sidebar = () => {
       <div className="Sidebar__content">
         <section className='Sidebar__account'>
           <h5>MAIN ACCOUNT BALANCE</h5>
-          <p className="Sidebar__usd">0.00 <span>USD</span></p>
-          <p className="Sidebar__btc">0.00 BTC</p>
+          <p className="Sidebar__usd">{usd} <span>USD</span></p>
+          <p className="Sidebar__btc">{btc} BTC</p>
           <div className='Sidebar__profit'>
             <p>Profits (7d)</p>
-            <p>0.00 USD</p>
+            <p>{usd} ?? USD</p>
           </div>
           <div className="Sidebar__btn">
             <button className='deposit'>DEPOSIT</button>
