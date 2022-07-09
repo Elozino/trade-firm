@@ -1,10 +1,9 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import AccountCard from '../../components/DashBoard/AccountCard/AccountCard'
 import "./Dashboard.css"
 import { TiWarning } from "react-icons/ti"
 import { IoIosAlert } from 'react-icons/io'
 import { BsArrowRight } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
 import FundsCard from '../../components/DashBoard/FundsCard/FundsCard'
 import { StateContext } from '../../context/context'
 

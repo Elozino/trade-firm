@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Footer.css"
 import Icon from "../../assets/money-back.png"
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -116,16 +117,16 @@ const Footer = () => {
         <div>
           <ul>
             <li>
-              <a href="http://" target="_blank" rel="noopener noreferrer">About</a>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <a href="http://" target="_blank" rel="noopener noreferrer">Affiliate</a>
+              <Link to="/affiliate">Affiliate</Link>
             </li>
             <li>
-              <a href="http://" target="_blank" rel="noopener noreferrer">FAQs</a>
+              <Link to="/faqs">FAQs</Link>
             </li>
             <li>
-              <a href="http://" target="_blank" rel="noopener noreferrer">Terms {" "}</a>
+              <Link to="/terms">Terms {" "}</Link>
             </li>
           </ul>
         </div>

@@ -60,7 +60,7 @@ button {
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 720px) {
   .Dashboard header {
     display: flex;
     align-items: flex-start;

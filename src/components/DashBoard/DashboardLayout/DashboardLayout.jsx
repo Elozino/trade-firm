@@ -13,12 +13,13 @@ import { auth, db } from '../../../firebase/firebaseConfig'
 import { signOut } from 'firebase/auth'
 import { StateContext } from '../../../context/context'
 import { collection, getDocs, query, where } from 'firebase/firestore'
+import NavModal from '../../NavBar/NavModal'
 
 const DashboardLayout = () => {
+  const [navModal, setNavModal] = useState(false)
+  const { userName, setuserName, setEmail, setUsd, setBtc } = useContext(StateContext)
   const { pathname } = useLocation()
   const navigate = useNavigate()
-  const { userName, setuserName, setEmail, setUsd, setBtc } = useContext(StateContext)
-  // const currentUserId = auth.currentUser?.uid;
 
   const getUser = async () => {
     const currentUserId = auth?.currentUser?.uid;
@@ -27,9 +28,9 @@ const DashboardLayout = () => {
       collection(db, "users"),
       where("uid", "==", currentUserId)
     );
+    // doc.data() is never undefined for query doc
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc
       setuserName(doc.data().fullname);
       setEmail(doc.data().email);
       setUsd(doc.data().usdAmount);
@@ -73,9 +74,10 @@ const DashboardLayout = () => {
           <div className="DashboardLayout__person">
             <p className='verified'>Verified</p>
             <p
-              onClick={logout}
+              onClick={() => setNavModal(!navModal)}
               style={{ display: "flex", alignItems: "center" }}>{userName} &nbsp;<IoIosArrowDown /></p>
           </div>
+          {navModal && <NavModal />}
         </div>
         <>
           {renderScreen()}
