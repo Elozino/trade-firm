@@ -1,0 +1,8 @@
+.NavModal {
+  position: absolute;
+  right: 2rem;
+  top: 50px;
+  width: 10rem;
+  background-color: #fff;
+  padding: .5rem 1rem;
+}

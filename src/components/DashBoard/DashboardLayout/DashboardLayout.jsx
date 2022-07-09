@@ -13,7 +13,7 @@ import { auth, db } from '../../../firebase/firebaseConfig'
 import { signOut } from 'firebase/auth'
 import { StateContext } from '../../../context/context'
 import { collection, getDocs, query, where } from 'firebase/firestore'
-import NavModal from '../../NavBar/NavModal'
+import NavModal from "../../NavBar/NavModal"
 
 const DashboardLayout = () => {
   const [navModal, setNavModal] = useState(false)
