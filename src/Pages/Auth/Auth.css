@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgb(21, 21, 48);
   color: #cecece;
 }
@@ -137,4 +137,11 @@ input:-webkit-autofill:active {
 
 .Auth__footer-rights {
   font-size: 0.75rem;
+}
+
+@media screen and (max-width: 720px) {
+  .Auth__footer-wrapper {
+    flex-direction: column;
+    gap: .4rem;
+  }
 }
