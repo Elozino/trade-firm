@@ -55,8 +55,8 @@
   justify-content: space-between;
   padding: 0.6rem 2.5rem;
   height: 40px;
-  position: sticky;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
   width: 100%;
 }
 
